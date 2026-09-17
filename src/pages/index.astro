@@ -1,147 +1,164 @@
 ---
 import '../styles/global.css';
 
+const whatsappUrl = 'https://wa.me/15551234567';
+
 const offers = [
   {
-    title: 'Curated Everyday Essentials',
-    description: 'Fast-moving products selected for repeat demand, clear margins, and easy merchandising.',
-    icon: '✦',
+    title: 'Wholesale & Retail',
+    description: 'Flexible ordering for individual buyers, boutiques, resellers, and growing wholesale businesses.',
+    icon: '01',
   },
   {
-    title: 'Wholesale-Ready Supply',
-    description: 'Bulk ordering, predictable lead times, and flexible quantities for stores, teams, and resellers.',
-    icon: '▦',
+    title: 'Secure PayPal Payment',
+    description: 'Pay through a secure PayPal payment link after every product and order detail is confirmed.',
+    icon: '02',
   },
   {
-    title: 'Retail-Friendly Experience',
-    description: 'Polished packaging, conversion-focused bundles, and support assets that make buying simple.',
-    icon: '◈',
-  },
-];
-
-const products = [
-  {
-    name: 'Starter Retail Bundle',
-    price: 'From $149',
-    tag: 'Best seller',
-    description: 'A balanced mix of proven SKUs designed for first-time buyers and compact displays.',
+    title: 'Inspection Before Shipping',
+    description: 'Receive clear photos and a high-definition video to inspect your item before shipment.',
+    icon: '03',
   },
   {
-    name: 'Wholesale Growth Pack',
-    price: 'Custom quote',
-    tag: 'Wholesale',
-    description: 'Volume pricing, priority allocation, and replenishment support for growing operators.',
-  },
-  {
-    name: 'Premium Gift Set',
-    price: 'From $39',
-    tag: 'Retail',
-    description: 'Shelf-ready packaging with a premium unboxing experience for seasonal campaigns.',
-  },
-  {
-    name: 'Display Counter Kit',
-    price: 'From $89',
-    tag: 'New',
-    description: 'Compact merchandising kit designed for checkout counters and impulse-buy placement.',
-  },
-  {
-    name: 'Seasonal Promo Pack',
-    price: 'From $199',
-    tag: 'Campaign',
-    description: 'A campaign-ready assortment for holiday, gifting, and limited-time retail promotions.',
-  },
-  {
-    name: 'Reorder Essentials Case',
-    price: 'Custom quote',
-    tag: 'Reorder',
-    description: 'A replenishment-focused case for proven products with consistent weekly sell-through.',
+    title: 'Fast Worldwide Delivery',
+    description: 'FedEx or UPS delivery with full tracking and personal follow-up for high-value packages.',
+    icon: '04',
   },
 ];
 
 const reasons = [
-  'Quality checked before dispatch',
-  'Responsive support from order to delivery',
-  'Low-friction reorder process',
-  'Clear pricing with no hidden handling fees',
+  'Master-grade bags for both wholesale and retail orders',
+  'Secure PayPal payment link after order confirmation',
+  'Photo and HD video inspection before shipment',
+  'Free replacement or refund before shipping if the item is not approved',
+  'FedEx or UPS worldwide delivery with complete tracking',
+  'Personal logistics follow-up for high-value packages',
 ];
 
 const steps = [
-  ['01', 'Choose your mix', 'Select retail bundles, wholesale packs, or request a custom assortment.'],
-  ['02', 'Confirm pricing', 'We align on quantity, packaging needs, delivery window, and final landed cost.'],
-  ['03', 'Receive & sell', 'Orders ship in protective packaging with tracking and reorder support.'],
+  ['01', 'Add Us on WhatsApp', 'Get the latest catalog plus an exclusive $20 discount for new customers.'],
+  ['02', 'Choose Your Products', 'Browse the catalog or send us photos of the items you want. We will check stock and quote our best price.'],
+  ['03', 'Confirm & Pay Securely', 'Confirm the product, quantity, price, color, size, and shipping details, then pay through a secure PayPal link.'],
+  ['04', 'Order Preparation', 'We normally prepare your order within 1-3 working days after payment.'],
+  ['05', 'Inspect Before Shipping', 'We send a high-definition product video. Request a replacement or refund if you are not satisfied.'],
+  ['06', 'Worldwide Delivery', 'After your confirmation, we ship from China by FedEx or UPS. Estimated delivery is 7-14 working days.'],
+  ['07', 'Tracking & After-Sales', 'Receive full tracking, personal logistics follow-up, and support for major quality issues reported within 48 hours.'],
+];
+
+const serviceHighlights = [
+  {
+    title: 'Top Master Grade Authentic Quality',
+    icon: '✅',
+    accent: '💕',
+    src: '/cart.jpg',
+    alt: 'Master-grade bag selection showing product quality',
+  },
+  {
+    title: 'Premium Customer Service',
+    icon: '💯',
+    accent: '🛍️',
+    src: '/showcase.jpg',
+    alt: 'Bag catalog selection supported by premium customer service',
+  },
+  {
+    title: 'Fast Worldwide Delivery',
+    icon: '✈️',
+    accent: '✨',
+    src: '/unbox.jpg',
+    alt: 'Product selection available for fast worldwide delivery',
+  },
+  {
+    title: 'Safe PayPal Payment Guarantee',
+    icon: '🏦',
+    accent: '💵',
+    src: '/packging.jpg',
+    alt: 'Master-grade products available with secure PayPal payment',
+  },
 ];
 
 const reviews = [
   {
-    quote: 'The products arrived ready to sell, and our reorder was even faster than the first shipment.',
-    author: 'Maya L.',
-    role: 'Boutique Owner',
-    initials: 'ML',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=160&q=85',
-    productImages: [
-      {
-        src: 'https://images.unsplash.com/photo-1607344645866-009c320f4c8e?auto=format&fit=crop&w=900&q=85',
-        alt: 'Retail bundle packaging displayed on a counter',
-      },
-      {
-        src: 'https://images.unsplash.com/photo-1585386959984-a41552231658?auto=format&fit=crop&w=900&q=85',
-        alt: 'Premium product bottle close-up from customer review',
-      },
-      {
-        src: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=900&q=85',
-        alt: 'Gift-ready product box photographed by customer',
-      },
-    ],
+    quote: 'Everything was transparent from the inspection video to delivery. I love my bag.',
+    author: 'M****',
+    role: 'From United States',
+    initials: 'M',
+    productImages: [{ src: '/reviews/1.jpg', alt: 'Customer review screenshot 1' }],
   },
   {
-    quote: 'Great communication, clean packaging, and the wholesale pricing made the numbers work.',
-    author: 'Daniel R.',
-    role: 'Regional Buyer',
-    initials: 'DR',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=160&q=85',
-    productImages: [
-      {
-        src: 'https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=900&q=85',
-        alt: 'Wholesale product assortment ready for store merchandising',
-      },
-      {
-        src: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=900&q=85',
-        alt: 'Customer review image showing retail-ready packaging',
-      },
-      {
-        src: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=900&q=85',
-        alt: 'Clean product lineup photographed after delivery',
-      },
-    ],
+    quote: 'The quality is beautiful and the communication was excellent throughout the order.',
+    author: 'A****',
+    role: 'From United States',
+    initials: 'A',
+    productImages: [{ src: '/reviews/2.jpg', alt: 'Customer review screenshot 2' }],
   },
   {
-    quote: 'Our customers noticed the presentation immediately. The bundle format is easy to promote.',
-    author: 'Sofia C.',
-    role: 'Retail Manager',
-    initials: 'SC',
-    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=160&q=85',
-    productImages: [
-      {
-        src: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=900&q=85',
-        alt: 'Shelf-ready products arranged for customer review',
-      },
-      {
-        src: 'https://images.unsplash.com/photo-1627384113710-424c9181ebbe?auto=format&fit=crop&w=900&q=85',
-        alt: 'Premium packaged item included in a customer review',
-      },
-      {
-        src: 'https://images.unsplash.com/photo-1607006344380-b6775a0824ce?auto=format&fit=crop&w=900&q=85',
-        alt: 'Unboxed product set photographed by a retail buyer',
-      },
-    ],
+    quote: 'The video inspection gave me confidence, and the package arrived safely and quickly.',
+    author: 'J****',
+    role: 'From United States',
+    initials: 'J',
+    productImages: [{ src: '/reviews/3.jpg', alt: 'Customer review screenshot 3' }],
+  },
+  {
+    quote: 'The details look amazing in person. I am already choosing my next order.',
+    author: 'S****',
+    role: 'From United States',
+    initials: 'S',
+    productImages: [{ src: '/reviews/4.jpg', alt: 'Customer review screenshot 4' }],
+  },
+  {
+    quote: 'Fast replies, careful packaging, and exactly the quality shown in the inspection video.',
+    author: 'E****',
+    role: 'From United States',
+    initials: 'E',
+    productImages: [{ src: '/reviews/5.jpg', alt: 'Customer review screenshot 5' }],
+  },
+  {
+    quote: 'A smooth experience from payment to delivery. The bag exceeded my expectations.',
+    author: 'C****',
+    role: 'From United Kingdom',
+    initials: 'C',
+    productImages: [{ src: '/reviews/6.jpg', alt: 'Customer review screenshot 6' }],
+  },
+  {
+    quote: 'The customer service was patient and helpful, and every detail was confirmed before shipping.',
+    author: 'L****',
+    role: 'From France',
+    initials: 'L',
+    productImages: [{ src: '/reviews/7.jpg', alt: 'Customer review screenshot 7' }],
+  },
+  {
+    quote: 'Excellent quality and reliable tracking. My order arrived in perfect condition.',
+    author: 'N****',
+    role: 'From Germany',
+    initials: 'N',
+    productImages: [{ src: '/reviews/8.jpg', alt: 'Customer review screenshot 8' }],
+  },
+  {
+    quote: 'I appreciated seeing the product before shipment. The whole process felt secure and professional.',
+    author: 'R****',
+    role: 'From Italy',
+    initials: 'R',
+    productImages: [{ src: '/reviews/9.jpg', alt: 'Customer review screenshot 9' }],
   },
 ];
 
+const policies = [
+  ['Approve Before We Ship', 'We send a detailed video before shipment. If you are not satisfied, you may request a replacement, cancel the order, or request a refund before dispatch. PayPal deducts a 4.5% refund processing fee directly; this fee is not charged by us.'],
+  ['Major Quality Issues', 'Please record an unboxing video. If the item has a major issue such as a broken zipper, damaged hardware, or damaged leather, send clear photos or videos within 48 hours after delivery. We will arrange a refund or resend promptly, and the damaged item does not need to be returned.'],
+  ['Handmade Details', 'Minor handmade details, including slight glazing dents, stitching irregularities, or small imperfections identified during quality control, are not considered defects. We may offer a store coupon as compensation when appropriate.'],
+  ['Backside Strap Stitching', 'Backside strap stitching is not considered a flaw and is not eligible for return, exchange, or refund. We ensure that the front-side stitching meets our quality standard before shipment.'],
+  ['Customized Items', 'Hot-stamped or personalized items are non-refundable, non-returnable, and non-exchangeable. Please confirm every customization detail carefully before production.'],
+  ['Packaging, Color & Size', 'Gift box damage caused during transit does not qualify for compensation, although we use thick outer cartons for protection. Please confirm color and size before shipment; natural-light photos or videos are available on request.'],
+  ['Non-Quality Issues', 'Refunds and exchanges are not available for non-quality reasons such as color preference, size selection, or a change of mind after shipment. Please confirm all details carefully before approving dispatch.'],
+];
+
 const faqs = [
-  ['Do you support both retail and wholesale orders?', 'Yes. You can start with retail-ready bundles or request wholesale pricing for larger quantities.'],
-  ['Can I customize packaging?', 'Custom packaging is available for qualified wholesale orders depending on quantity and production timeline.'],
-  ['How long does shipping take?', 'Standard orders typically ship quickly after confirmation. Final timing depends on destination, quantity, and packaging needs.'],
-  ['Is there a minimum order quantity?', 'Retail bundles have low starting quantities. Wholesale MOQs vary by product mix and customization level.'],
+  ['Do you accept both wholesale and retail orders?', 'Yes. We support individual retail orders as well as volume orders for boutiques, resellers, and wholesale buyers.'],
+  ['How can I see the catalog and prices?', 'Add us on WhatsApp to receive the latest catalog, current pricing, stock information, and your new-customer discount.'],
+  ['How do I pay?', 'After all order details are confirmed, we send you a secure PayPal payment link.'],
+  ['How long does order preparation take?', 'Order preparation normally takes 1-3 working days before dispatch. Customized or large wholesale orders may require additional time.'],
+  ['Can I inspect my item before it ships?', 'Yes. We send clear photos or a high-definition product video and ship only after you approve the item.'],
+  ['How long does delivery take?', 'Estimated delivery is 7-14 working days after dispatch via FedEx or UPS. Timing may vary by destination and customs processing.'],
 ];
 ---
 
@@ -151,15 +168,15 @@ const faqs = [
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="A mobile-first wholesale and retail landing page built with Astro for Cloudflare Pages and Workers deployment."
+      content="MAESVANTI master-grade bags for wholesale and retail, with secure PayPal payment, pre-shipment video inspection, and worldwide delivery."
     />
-    <title>Premium Wholesale & Retail Landing Page</title>
+    <title>MAESVANTI | Master-Grade Bags Wholesale & Retail</title>
   </head>
   <body>
     <header class="site-header" aria-label="Primary navigation">
       <a class="site-logo" href="#top" aria-label="Go to homepage">
-        <span>AL</span>
-        <strong>Astro Landing</strong>
+        <span>MA</span>
+        <strong>MAESVANTI</strong>
       </a>
       <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-navigation">
         <span class="menu-toggle__line"></span>
@@ -168,14 +185,12 @@ const faqs = [
         <span class="sr-only">Toggle navigation menu</span>
       </button>
       <nav class="site-nav" id="site-navigation" aria-label="Page sections">
-        <a href="#offer">Offer</a>
+        <a href="#offer">Why Us</a>
         <a href="#promotion">Promotion</a>
-        <a href="#products">Best Sellers</a>
-        <a href="#why-buy">Why Us</a>
-        <a href="#process">How It Works</a>
-        <a href="#advantages">Advantages</a>
+        <a href="#process">How to Order</a>
         <a href="#shipping">Shipping</a>
         <a href="#reviews">Reviews</a>
+        <a href="#policy">Return Policy</a>
         <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -184,54 +199,118 @@ const faqs = [
     <main>
       <section class="hero section-shell" id="top">
         <div class="hero__content">
-          <p class="eyebrow">Wholesale + Retail Supply</p>
-          <h1>Premium products your customers want to buy again.</h1>
+          <p class="eyebrow">Master-Grade Bags | Wholesale + Retail</p>
+          <h1>Master-Grade Bags, Inspected Before They Ship.</h1>
           <p class="hero__lead">
-            Source fast-moving, beautifully packaged products for retail shelves, gifting campaigns,
-            and wholesale growth—without complicated ordering.
+            Shop confidently with secure PayPal payments, detailed photo and video quality inspection,
+            and fast worldwide delivery by FedEx or UPS.
           </p>
           <div class="hero__actions" aria-label="Primary actions">
-            <a class="button button--primary" href="#contact">Get a quote</a>
-            <a class="button button--secondary" href="#products">View best sellers</a>
+            <a class="button button--primary" href={whatsappUrl} target="_blank" rel="noreferrer">
+              <svg class="whatsapp-cta__icon" viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M16 3.25A12.6 12.6 0 0 0 5.28 22.47L3.6 28.75l6.43-1.64A12.62 12.62 0 1 0 16 3.25Z" />
+                <path d="M12.2 9.3c-.27-.6-.55-.61-.81-.62h-.69c-.24 0-.63.09-.96.45-.33.36-1.26 1.23-1.26 3s1.29 3.48 1.47 3.72c.18.24 2.53 4.04 6.26 5.5 3.1 1.22 3.73.98 4.4.92.67-.06 2.16-.88 2.46-1.74.3-.86.3-1.6.21-1.75-.09-.15-.33-.24-.69-.42-.36-.18-2.16-1.07-2.49-1.19-.33-.12-.57-.18-.81.18-.24.36-.93 1.19-1.14 1.43-.21.24-.42.27-.78.09-.36-.18-1.52-.56-2.9-1.79-1.07-.95-1.8-2.13-2.01-2.49-.21-.36-.02-.55.16-.73.16-.16.36-.42.54-.63.18-.21.24-.36.36-.6.12-.24.06-.45-.03-.63-.09-.18-.79-1.97-1.29-3.4Z" />
+              </svg>
+              <span>Get Catalog &amp; $20 Discount</span>
+            </a>
+            <a class="button button--secondary" href="#process">See How to Order</a>
           </div>
-          <dl class="hero__metrics" aria-label="Key business metrics">
+          <dl class="hero__metrics" aria-label="Order and delivery highlights">
             <div>
-              <dt>4.9/5</dt>
-              <dd>Buyer rating</dd>
+              <dt>PayPal</dt>
+              <dd>Secure payment</dd>
             </div>
             <div>
-              <dt>72h</dt>
-              <dd>Fast dispatch</dd>
+              <dt>1-3 Days</dt>
+              <dd>Order preparation</dd>
             </div>
             <div>
-              <dt>1k+</dt>
-              <dd>Orders fulfilled</dd>
+              <dt>7-14 Days</dt>
+              <dd>Estimated delivery</dd>
             </div>
           </dl>
         </div>
-        <div class="hero-card" aria-label="Featured product preview">
-          <div class="hero-card__badge">Ready to Ship</div>
-          <div class="product-orbit">
-            <span></span>
-            <span></span>
-            <span></span>
+        <div class="hero-card" aria-label="Pre-shipment approval process">
+          <div class="hero-card__badge">Your Approval Comes First</div>
+          <div class="approval-steps">
+            <div><span>01</span><p><strong>We prepare your item</strong><small>Usually within 1-3 working days</small></p></div>
+            <div><span>02</span><p><strong>You inspect every detail</strong><small>Clear photos and HD product video</small></p></div>
+            <div><span>03</span><p><strong>We ship after confirmation</strong><small>FedEx or UPS with full tracking</small></p></div>
           </div>
-          <h2>Retail Starter Bundle</h2>
-          <p>Curated SKUs, protective packaging, and reorder support in one simple pack.</p>
           <div class="hero-card__footer">
-            <strong>35%+</strong>
-            <span>Typical gross margin target</span>
+            <strong>48H</strong>
+            <span>After-sales reporting window for major quality issues</span>
           </div>
         </div>
       </section>
 
+      <section class="category-showcase section-shell" aria-label="Product categories">
+        <h2 class="category-showcase__title">
+          Master-Grade Bags, Carefully Inspected in Every Detail.
+        </h2>
+        <img
+          class="category-showcase__image"
+          src="/bags-category.png"
+          alt="Available designer bag and footwear categories"
+          width="1920"
+          height="878"
+          loading="eager"
+        />
+        <a class="category-showcase__cta" href={whatsappUrl} target="_blank" rel="noreferrer">
+          <svg class="whatsapp-cta__icon category-showcase__cta-icon" viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M16 3.25A12.6 12.6 0 0 0 5.28 22.47L3.6 28.75l6.43-1.64A12.62 12.62 0 1 0 16 3.25Z" />
+            <path d="M12.2 9.3c-.27-.6-.55-.61-.81-.62h-.69c-.24 0-.63.09-.96.45-.33.36-1.26 1.23-1.26 3s1.29 3.48 1.47 3.72c.18.24 2.53 4.04 6.26 5.5 3.1 1.22 3.73.98 4.4.92.67-.06 2.16-.88 2.46-1.74.3-.86.3-1.6.21-1.75-.09-.15-.33-.24-.69-.42-.36-.18-2.16-1.07-2.49-1.19-.33-.12-.57-.18-.81.18-.24.36-.93 1.19-1.14 1.43-.21.24-.42.27-.78.09-.36-.18-1.52-.56-2.9-1.79-1.07-.95-1.8-2.13-2.01-2.49-.21-.36-.02-.55.16-.73.16-.16.36-.42.54-.63.18-.21.24-.36.36-.6.12-.24.06-.45-.03-.63-.09-.18-.79-1.97-1.29-3.4Z" />
+          </svg>
+          <span>Contact Us for Catalog &amp; Price Details</span>
+        </a>
+      </section>
+
       <section class="trust-bar" id="trust" aria-label="Social proof and trust bar">
-        <p>Trusted by independent retailers, ecommerce teams, gift shops, and wholesale buyers.</p>
+        <p>A clearer, safer way to order master-grade bags from anywhere in the world.</p>
         <div>
-          <span>Fast Dispatch</span>
-          <span>Secure Payments</span>
-          <span>Bulk Pricing</span>
-          <span>Quality Checked</span>
+          <span>Wholesale + Retail</span>
+          <span>Secure PayPal Payment</span>
+          <span>Video Inspection</span>
+          <span>Worldwide Tracking</span>
+        </div>
+      </section>
+
+      <section class="section-shell feature-carousel-section" aria-labelledby="feature-carousel-title">
+        <div class="section-heading feature-carousel-heading">
+          <p class="eyebrow">Why Shop With MAESVANTI</p>
+          <h2 id="feature-carousel-title">Quality, service, and delivery you can trust.</h2>
+        </div>
+        <div class="product-slider feature-carousel" data-product-slider tabindex="0" aria-roledescription="carousel" aria-label="MAESVANTI service highlights">
+          <div class="product-slider__viewport">
+            <div class="product-slider__track" data-product-track>
+              {serviceHighlights.map((feature, index) => (
+                <article class="product-slide feature-card" data-product-slide aria-label={`Highlight ${index + 1} of ${serviceHighlights.length}`}>
+                  <button
+                    class="feature-card__image"
+                    type="button"
+                    data-lightbox-src={feature.src}
+                    data-lightbox-alt={feature.alt}
+                    aria-label={`Enlarge image for ${feature.title}`}
+                  >
+                    <img src={feature.src} alt={feature.alt} loading="lazy" />
+                    <span aria-hidden="true">↗</span>
+                  </button>
+                  <div class="feature-card__body">
+                    <span class="feature-card__icon" aria-hidden="true">{feature.icon}</span>
+                    <h3>{feature.title}</h3>
+                    <span class="feature-card__accent" aria-hidden="true">{feature.accent}</span>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+          <div class="product-slider__controls">
+            <div class="product-slider__dots" data-product-dots aria-label="Choose a service highlight"></div>
+            <div class="product-slider__arrows">
+              <button class="slider-arrow" type="button" data-product-prev aria-label="Previous highlights">←</button>
+              <button class="slider-arrow" type="button" data-product-next aria-label="Next highlights">→</button>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -239,10 +318,10 @@ const faqs = [
         <div class="promo-countdown__card">
           <div class="promo-countdown__content">
             <p class="eyebrow">New Customer Discount</p>
-            <h2 id="promotion-title">First order savings end soon.</h2>
+            <h2 id="promotion-title">Get $20 off your first order.</h2>
             <p>
-              New buyers can unlock a limited-time discount on starter bundles and wholesale
-              sample orders before the promotion window closes.
+              Add us on WhatsApp to receive the latest product catalog, current prices,
+              and your exclusive new-customer discount.
             </p>
           </div>
         </div>
@@ -283,14 +362,20 @@ const faqs = [
           </div>
         </div>
         <div class="promo-countdown__action">
-          <a class="button button--primary" href="#contact">Claim the discount</a>
+          <a class="button button--primary" href={whatsappUrl} target="_blank" rel="noreferrer">
+            <svg class="whatsapp-cta__icon" viewBox="0 0 32 32" aria-hidden="true">
+              <path d="M16 3.25A12.6 12.6 0 0 0 5.28 22.47L3.6 28.75l6.43-1.64A12.62 12.62 0 1 0 16 3.25Z" />
+              <path d="M12.2 9.3c-.27-.6-.55-.61-.81-.62h-.69c-.24 0-.63.09-.96.45-.33.36-1.26 1.23-1.26 3s1.29 3.48 1.47 3.72c.18.24 2.53 4.04 6.26 5.5 3.1 1.22 3.73.98 4.4.92.67-.06 2.16-.88 2.46-1.74.3-.86.3-1.6.21-1.75-.09-.15-.33-.24-.69-.42-.36-.18-2.16-1.07-2.49-1.19-.33-.12-.57-.18-.81.18-.24.36-.93 1.19-1.14 1.43-.21.24-.42.27-.78.09-.36-.18-1.52-.56-2.9-1.79-1.07-.95-1.8-2.13-2.01-2.49-.21-.36-.02-.55.16-.73.16-.16.36-.42.54-.63.18-.21.24-.36.36-.6.12-.24.06-.45-.03-.63-.09-.18-.79-1.97-1.29-3.4Z" />
+            </svg>
+            <span>Claim My $20 Discount</span>
+          </a>
         </div>
       </section>
 
       <section class="section-shell split-section" id="offer">
         <div class="section-heading offer-heading">
           <p class="eyebrow">What We Offer</p>
-          <h2>Everything you need to source, stock, and sell with confidence.</h2>
+          <h2>Confidence at every step of your order.</h2>
         </div>
         <div class="card-grid">
           {offers.map((offer) => (
@@ -303,59 +388,11 @@ const faqs = [
         </div>
       </section>
 
-      <section class="section-shell product-section" id="products">
-        <div class="section-heading">
-          <p class="eyebrow">Best Sellers</p>
-          <h2>Product showcase built for quick decisions.</h2>
-          <p>Use this section to highlight your strongest categories, hero SKUs, or seasonal bundles.</p>
-        </div>
-        <div class="product-slider" data-product-slider tabindex="0" aria-roledescription="carousel" aria-label="Best selling products">
-          <div class="product-slider__viewport">
-            <div class="product-slider__track" data-product-track>
-              {products.map((product, index) => (
-                <article class="product-card product-slide" data-product-slide aria-label={`Product ${index + 1} of ${products.length}`}>
-                  <div class="product-card__visual">
-                    <span>{product.tag}</span>
-                  </div>
-                  <div class="product-card__body">
-                    <p>{product.price}</p>
-                    <h3>{product.name}</h3>
-                    <p>{product.description}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-          <div class="product-slider__controls">
-            <div class="product-slider__dots" data-product-dots aria-label="Choose a product"></div>
-            <div class="product-slider__arrows">
-              <button class="slider-arrow" type="button" data-product-prev aria-label="Previous product">←</button>
-              <button class="slider-arrow" type="button" data-product-next aria-label="Next product">→</button>
-            </div>
-          </div>
-        </div>
-        <noscript>
-          <div class="product-grid product-grid--fallback">
-            {products.map((product) => (
-              <article class="product-card">
-                <div class="product-card__visual">
-                  <span>{product.tag}</span>
-                </div>
-                <div class="product-card__body">
-                  <p>{product.price}</p>
-                  <h3>{product.name}</h3>
-                  <p>{product.description}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </noscript>
-      </section>
-
       <section class="section-shell why-section" id="why-buy">
         <div class="section-heading">
-          <p class="eyebrow">Why Customers Buy From Us</p>
-          <h2>Reliable products, clean margins, and less operational friction.</h2>
+          <p class="eyebrow">Our Service Promise</p>
+          <h2>See the product first. Approve it. Then we ship.</h2>
+          <p>We make the process transparent for both single-item purchases and wholesale orders.</p>
         </div>
         <div class="reason-panel">
           {reasons.map((reason) => (
@@ -369,8 +406,9 @@ const faqs = [
 
       <section class="section-shell process-section" id="process">
         <div class="section-heading">
-          <p class="eyebrow">How It Works</p>
-          <h2>From first inquiry to fulfilled order in three steps.</h2>
+          <p class="eyebrow">How to Order</p>
+          <h2>From WhatsApp inquiry to worldwide delivery.</h2>
+          <p>A simple seven-step process with inspection and confirmation built in.</p>
         </div>
         <div class="steps">
           {steps.map(([number, title, description]) => (
@@ -385,46 +423,49 @@ const faqs = [
 
       <section class="section-shell advantage-section" id="advantages">
         <div class="advantage-card advantage-card--dark">
-          <p class="eyebrow">Wholesale Advantages</p>
-          <h2>Scale orders without losing control.</h2>
+          <p class="eyebrow">Before Dispatch</p>
+          <h2>You stay in control before your order leaves.</h2>
           <ul>
-            <li>Volume pricing and custom quotes</li>
-            <li>Replenishment planning for repeat buyers</li>
-            <li>Packaging options for qualified orders</li>
+            <li>Preparation normally takes 1-3 working days</li>
+            <li>Receive clear photos or a high-definition inspection video</li>
+            <li>Request a replacement, cancellation, or refund before shipment</li>
+            <li>Shipment is arranged only after your confirmation</li>
           </ul>
         </div>
         <div class="advantage-card">
-          <p class="eyebrow">Retail Advantages</p>
-          <h2>Start small and sell faster.</h2>
+          <p class="eyebrow">After Dispatch</p>
+          <h2>Tracked delivery with personal follow-up.</h2>
           <ul>
-            <li>Low-friction starter bundles</li>
-            <li>Shelf-ready presentation</li>
-            <li>Easy product education and promotion</li>
+            <li>FedEx or UPS international delivery from China</li>
+            <li>Estimated arrival in 7-14 working days after dispatch</li>
+            <li>Complete real-time logistics tracking information</li>
+            <li>Personal follow-up for high-value packages</li>
           </ul>
         </div>
       </section>
 
       <section class="section-shell shipping-section" id="shipping">
         <div>
-          <p class="eyebrow">Packaging & Shipping</p>
-          <h2>Protected, tracked, and presentation-ready.</h2>
+          <p class="eyebrow">Worldwide Shipping</p>
+          <h2>Fast delivery, full tracking, and real support.</h2>
           <p>
-            Orders are prepared with protective materials, clear labeling, and shipment tracking.
-            For retail programs, packaging can support gifting, display, and seasonal campaigns.
+            Every approved order is packed in a protective outer carton and shipped by FedEx or UPS.
+            We provide the tracking number and follow the shipment through delivery, with extra attention
+            for high-value packages.
           </p>
         </div>
-        <div class="shipping-list">
-          <span>Protective carton packing</span>
-          <span>Tracking after dispatch</span>
-          <span>Retail-ready bundle options</span>
-          <span>Wholesale pallet planning</span>
+        <div class="delivery-timeline" aria-label="Order and delivery timeline">
+          <div><strong>1-3</strong><span>Working days for order preparation</span></div>
+          <div><strong>7-14</strong><span>Working days estimated after dispatch</span></div>
+          <div><strong>24/7</strong><span>Online logistics tracking access</span></div>
         </div>
       </section>
 
       <section class="section-shell review-section" id="reviews" aria-labelledby="reviews-title">
         <div class="section-heading">
           <p class="eyebrow">Customer Reviews</p>
-          <h2 id="reviews-title">Proof from buyers who reorder.</h2>
+          <h2 id="reviews-title">What buyers say after delivery.</h2>
+          <p>Feedback from retail customers, boutique owners, and wholesale buyers.</p>
         </div>
         <div class="review-slider" data-review-slider tabindex="0" aria-roledescription="carousel" aria-label="Customer reviews">
           <div class="review-slider__viewport">
@@ -450,7 +491,6 @@ const faqs = [
                   </div>
                   <blockquote>“{review.quote}”</blockquote>
                   <figcaption>
-                    <img src={review.image} alt={`${review.author}, ${review.role}`} loading="lazy" />
                     <span class="review-slide__avatar-fallback" aria-hidden="true">{review.initials}</span>
                     <span>
                       <strong>{review.author}</strong>
@@ -473,15 +513,37 @@ const faqs = [
 
       <div class="image-lightbox" data-lightbox hidden>
         <button class="image-lightbox__close" type="button" data-lightbox-close aria-label="Close enlarged image">×</button>
-        <div class="image-lightbox__frame" role="dialog" aria-modal="true" aria-label="Enlarged product review image">
+        <div class="image-lightbox__frame" role="dialog" aria-modal="true" aria-label="Enlarged gallery image">
           <img data-lightbox-image src="" alt="" />
         </div>
       </div>
 
+      <section class="section-shell policy-section" id="policy" aria-labelledby="policy-title">
+        <div class="section-heading">
+          <p class="eyebrow">Return & Refund Policy</p>
+          <h2 id="policy-title">Clear protection, with clear conditions.</h2>
+          <p>
+            Please review these terms before payment and confirm the product details carefully before shipment.
+          </p>
+        </div>
+        <div class="policy-highlight">
+          <span>48 hours</span>
+          <p>Report major quality issues with clear photos or video within 48 hours after delivery.</p>
+        </div>
+        <div class="policy-list">
+          {policies.map(([title, description], index) => (
+            <details open={index === 0}>
+              <summary><span>{String(index + 1).padStart(2, '0')}</span>{title}</summary>
+              <p>{description}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
       <section class="section-shell faq-section" id="faq">
         <div class="section-heading">
           <p class="eyebrow">FAQ</p>
-          <h2>Answers before you place an order.</h2>
+          <h2>Everything to know before you order.</h2>
         </div>
         <div class="faq-list">
           {faqs.map(([question, answer]) => (
@@ -495,36 +557,41 @@ const faqs = [
 
       <section class="contact-section section-shell" id="contact" aria-labelledby="contact-title">
         <div class="section-heading">
-          <p class="eyebrow">Contact Us</p>
-          <h2 id="contact-title">Talk with us before you order.</h2>
-          <p>Reach out for wholesale pricing, sample bundles, packaging questions, or delivery timelines.</p>
+          <p class="eyebrow">Catalog, Price & Stock</p>
+          <h2 id="contact-title">Start your order on WhatsApp.</h2>
+          <p>Send us a product photo or tell us what you are looking for. We will reply with stock, pricing, and the latest catalog.</p>
         </div>
         <div class="contact-grid">
           <a class="contact-card" href="mailto:sales@example.com?subject=Wholesale%20%2F%20Retail%20Quote%20Request">
             <span aria-hidden="true">✉</span>
             <div>
-              <strong>Email</strong>
-              <p>sales@example.com</p>
+              <strong>Wholesale Inquiry</strong>
+              <p>Ask about volume pricing and availability</p>
             </div>
           </a>
-          <a class="contact-card" href="https://wa.me/15551234567" target="_blank" rel="noreferrer">
+          <a class="contact-card" href={whatsappUrl} target="_blank" rel="noreferrer">
             <span aria-hidden="true">☏</span>
             <div>
-              <strong>WhatsApp</strong>
-              <p>+1 (555) 123-4567</p>
+              <strong>WhatsApp Catalog</strong>
+              <p>Get catalog, prices, stock, and $20 off</p>
             </div>
           </a>
         </div>
       </section>
 
       <section class="final-cta section-shell" id="final-cta">
-        <p class="eyebrow">Final CTA</p>
-        <h2>Ready to build your next winning product mix?</h2>
+        <p class="eyebrow">Wholesale + Retail</p>
+        <h2>Choose your bag. Inspect every detail. Approve before shipping.</h2>
         <p>
-          Tell us what you sell, your target quantity, and your delivery window. We’ll recommend the
-          best retail or wholesale path.
+          Contact us for the latest catalog, current stock, wholesale pricing, and your new-customer discount.
         </p>
-        <a class="button button--primary" href="#contact">Request pricing</a>
+        <a class="button button--primary" href={whatsappUrl} target="_blank" rel="noreferrer">
+          <svg class="whatsapp-cta__icon" viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M16 3.25A12.6 12.6 0 0 0 5.28 22.47L3.6 28.75l6.43-1.64A12.62 12.62 0 1 0 16 3.25Z" />
+            <path d="M12.2 9.3c-.27-.6-.55-.61-.81-.62h-.69c-.24 0-.63.09-.96.45-.33.36-1.26 1.23-1.26 3s1.29 3.48 1.47 3.72c.18.24 2.53 4.04 6.26 5.5 3.1 1.22 3.73.98 4.4.92.67-.06 2.16-.88 2.46-1.74.3-.86.3-1.6.21-1.75-.09-.15-.33-.24-.69-.42-.36-.18-2.16-1.07-2.49-1.19-.33-.12-.57-.18-.81.18-.24.36-.93 1.19-1.14 1.43-.21.24-.42.27-.78.09-.36-.18-1.52-.56-2.9-1.79-1.07-.95-1.8-2.13-2.01-2.49-.21-.36-.02-.55.16-.73.16-.16.36-.42.54-.63.18-.21.24-.36.36-.6.12-.24.06-.45-.03-.63-.09-.18-.79-1.97-1.29-3.4Z" />
+          </svg>
+          <span>Get Catalog &amp; Price Details</span>
+        </a>
       </section>
     </main>
   </body>
@@ -558,7 +625,7 @@ const faqs = [
   const lightboxImage = lightbox?.querySelector('[data-lightbox-image]');
   const lightboxClose = lightbox?.querySelector('[data-lightbox-close]');
 
-  const setupSlider = ({ rootSelector, trackSelector, slideSelector, dotsSelector, previousSelector, nextSelector, dotLabel, desktopVisible = 1 }) => {
+  const setupSlider = ({ rootSelector, trackSelector, slideSelector, dotsSelector, previousSelector, nextSelector, dotLabel, desktopVisible = 1, stepBySlide = false }) => {
     const root = document.querySelector(rootSelector);
     const trackElement = root?.querySelector(trackSelector);
     const slideElements = root ? Array.from(root.querySelectorAll(slideSelector)) : [];
@@ -572,12 +639,17 @@ const faqs = [
     let touchStartX = 0;
 
     const getVisibleSlides = () => (window.matchMedia('(min-width: 900px)').matches ? desktopVisible : 1);
-    const getMaxIndex = () => Math.max(0, Math.ceil(slideElements.length / getVisibleSlides()) - 1);
+    const getMaxIndex = () => stepBySlide
+      ? Math.max(0, slideElements.length - getVisibleSlides())
+      : Math.max(0, Math.ceil(slideElements.length / getVisibleSlides()) - 1);
     const getTrackGap = () => {
       const styles = window.getComputedStyle(trackElement);
       return Number.parseFloat(styles.columnGap || styles.gap) || 0;
     };
     const getPageStride = () => {
+      if (stepBySlide) {
+        return (slideElements[0]?.getBoundingClientRect().width ?? 0) + getTrackGap();
+      }
       const viewportWidth = trackElement.parentElement?.clientWidth ?? trackElement.clientWidth;
       return viewportWidth + getTrackGap();
     };
@@ -594,7 +666,7 @@ const faqs = [
       currentIndex = Math.min(currentIndex, maxIndex);
       trackElement.style.transform = `translateX(-${currentIndex * getPageStride()}px)`;
       slideElements.forEach((slide, index) => {
-        const firstVisibleIndex = currentIndex * visibleSlides;
+        const firstVisibleIndex = stepBySlide ? currentIndex : currentIndex * visibleSlides;
         const isActive = index >= firstVisibleIndex && index < firstVisibleIndex + visibleSlides;
         slide.setAttribute('aria-hidden', String(!isActive));
         if (isActive) {
@@ -661,6 +733,7 @@ const faqs = [
     nextSelector: '[data-product-next]',
     dotLabel: 'Show product',
     desktopVisible: 3,
+    stepBySlide: true,
   });
 
   setupSlider({
@@ -775,7 +848,7 @@ const faqs = [
     document.querySelectorAll('[data-lightbox-src]').forEach((button) => {
       button.addEventListener('click', () => {
         const src = button.getAttribute('data-lightbox-src');
-        const alt = button.getAttribute('data-lightbox-alt') ?? 'Product review image';
+        const alt = button.getAttribute('data-lightbox-alt') ?? 'Enlarged gallery image';
         if (src) openLightbox(src, alt);
       });
     });
