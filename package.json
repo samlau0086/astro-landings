@@ -1,0 +1,20 @@
+{
+  "name": "astro-landings",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "cf:preview": "npm run build && wrangler pages dev ./dist",
+    "cf:deploy": "npm run build && wrangler pages deploy ./dist"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "latest",
+    "astro": "latest"
+  },
+  "devDependencies": {
+    "wrangler": "latest"
+  }
+}

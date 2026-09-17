@@ -1,0 +1,783 @@
+---
+import '../styles/global.css';
+
+const offers = [
+  {
+    title: 'Curated Everyday Essentials',
+    description: 'Fast-moving products selected for repeat demand, clear margins, and easy merchandising.',
+    icon: '✦',
+  },
+  {
+    title: 'Wholesale-Ready Supply',
+    description: 'Bulk ordering, predictable lead times, and flexible quantities for stores, teams, and resellers.',
+    icon: '▦',
+  },
+  {
+    title: 'Retail-Friendly Experience',
+    description: 'Polished packaging, conversion-focused bundles, and support assets that make buying simple.',
+    icon: '◈',
+  },
+];
+
+const products = [
+  {
+    name: 'Starter Retail Bundle',
+    price: 'From $149',
+    tag: 'Best seller',
+    description: 'A balanced mix of proven SKUs designed for first-time buyers and compact displays.',
+  },
+  {
+    name: 'Wholesale Growth Pack',
+    price: 'Custom quote',
+    tag: 'Wholesale',
+    description: 'Volume pricing, priority allocation, and replenishment support for growing operators.',
+  },
+  {
+    name: 'Premium Gift Set',
+    price: 'From $39',
+    tag: 'Retail',
+    description: 'Shelf-ready packaging with a premium unboxing experience for seasonal campaigns.',
+  },
+  {
+    name: 'Display Counter Kit',
+    price: 'From $89',
+    tag: 'New',
+    description: 'Compact merchandising kit designed for checkout counters and impulse-buy placement.',
+  },
+  {
+    name: 'Seasonal Promo Pack',
+    price: 'From $199',
+    tag: 'Campaign',
+    description: 'A campaign-ready assortment for holiday, gifting, and limited-time retail promotions.',
+  },
+  {
+    name: 'Reorder Essentials Case',
+    price: 'Custom quote',
+    tag: 'Reorder',
+    description: 'A replenishment-focused case for proven products with consistent weekly sell-through.',
+  },
+];
+
+const reasons = [
+  'Quality checked before dispatch',
+  'Responsive support from order to delivery',
+  'Low-friction reorder process',
+  'Clear pricing with no hidden handling fees',
+];
+
+const steps = [
+  ['01', 'Choose your mix', 'Select retail bundles, wholesale packs, or request a custom assortment.'],
+  ['02', 'Confirm pricing', 'We align on quantity, packaging needs, delivery window, and final landed cost.'],
+  ['03', 'Receive & sell', 'Orders ship in protective packaging with tracking and reorder support.'],
+];
+
+const reviews = [
+  {
+    quote: 'The products arrived ready to sell, and our reorder was even faster than the first shipment.',
+    author: 'Maya L.',
+    role: 'Boutique Owner',
+    initials: 'ML',
+    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=160&q=85',
+    productImages: [
+      {
+        src: 'https://images.unsplash.com/photo-1607344645866-009c320f4c8e?auto=format&fit=crop&w=900&q=85',
+        alt: 'Retail bundle packaging displayed on a counter',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1585386959984-a41552231658?auto=format&fit=crop&w=900&q=85',
+        alt: 'Premium product bottle close-up from customer review',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=900&q=85',
+        alt: 'Gift-ready product box photographed by customer',
+      },
+    ],
+  },
+  {
+    quote: 'Great communication, clean packaging, and the wholesale pricing made the numbers work.',
+    author: 'Daniel R.',
+    role: 'Regional Buyer',
+    initials: 'DR',
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=160&q=85',
+    productImages: [
+      {
+        src: 'https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=900&q=85',
+        alt: 'Wholesale product assortment ready for store merchandising',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=900&q=85',
+        alt: 'Customer review image showing retail-ready packaging',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=900&q=85',
+        alt: 'Clean product lineup photographed after delivery',
+      },
+    ],
+  },
+  {
+    quote: 'Our customers noticed the presentation immediately. The bundle format is easy to promote.',
+    author: 'Sofia C.',
+    role: 'Retail Manager',
+    initials: 'SC',
+    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=160&q=85',
+    productImages: [
+      {
+        src: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=900&q=85',
+        alt: 'Shelf-ready products arranged for customer review',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1627384113710-424c9181ebbe?auto=format&fit=crop&w=900&q=85',
+        alt: 'Premium packaged item included in a customer review',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1607006344380-b6775a0824ce?auto=format&fit=crop&w=900&q=85',
+        alt: 'Unboxed product set photographed by a retail buyer',
+      },
+    ],
+  },
+];
+
+const faqs = [
+  ['Do you support both retail and wholesale orders?', 'Yes. You can start with retail-ready bundles or request wholesale pricing for larger quantities.'],
+  ['Can I customize packaging?', 'Custom packaging is available for qualified wholesale orders depending on quantity and production timeline.'],
+  ['How long does shipping take?', 'Standard orders typically ship quickly after confirmation. Final timing depends on destination, quantity, and packaging needs.'],
+  ['Is there a minimum order quantity?', 'Retail bundles have low starting quantities. Wholesale MOQs vary by product mix and customization level.'],
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A mobile-first wholesale and retail landing page built with Astro for Cloudflare Pages and Workers deployment."
+    />
+    <title>Premium Wholesale & Retail Landing Page</title>
+  </head>
+  <body>
+    <header class="site-header" aria-label="Primary navigation">
+      <a class="site-logo" href="#top" aria-label="Go to homepage">
+        <span>AL</span>
+        <strong>Astro Landing</strong>
+      </a>
+      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-navigation">
+        <span class="menu-toggle__line"></span>
+        <span class="menu-toggle__line"></span>
+        <span class="menu-toggle__line"></span>
+        <span class="sr-only">Toggle navigation menu</span>
+      </button>
+      <nav class="site-nav" id="site-navigation" aria-label="Page sections">
+        <a href="#offer">Offer</a>
+        <a href="#promotion">Promotion</a>
+        <a href="#products">Best Sellers</a>
+        <a href="#why-buy">Why Us</a>
+        <a href="#process">How It Works</a>
+        <a href="#advantages">Advantages</a>
+        <a href="#shipping">Shipping</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero section-shell" id="top">
+        <div class="hero__content">
+          <p class="eyebrow">Wholesale + Retail Supply</p>
+          <h1>Premium products your customers want to buy again.</h1>
+          <p class="hero__lead">
+            Source fast-moving, beautifully packaged products for retail shelves, gifting campaigns,
+            and wholesale growth—without complicated ordering.
+          </p>
+          <div class="hero__actions" aria-label="Primary actions">
+            <a class="button button--primary" href="#contact">Get a quote</a>
+            <a class="button button--secondary" href="#products">View best sellers</a>
+          </div>
+          <dl class="hero__metrics" aria-label="Key business metrics">
+            <div>
+              <dt>4.9/5</dt>
+              <dd>Buyer rating</dd>
+            </div>
+            <div>
+              <dt>72h</dt>
+              <dd>Fast dispatch</dd>
+            </div>
+            <div>
+              <dt>1k+</dt>
+              <dd>Orders fulfilled</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="hero-card" aria-label="Featured product preview">
+          <div class="hero-card__badge">Ready to Ship</div>
+          <div class="product-orbit">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <h2>Retail Starter Bundle</h2>
+          <p>Curated SKUs, protective packaging, and reorder support in one simple pack.</p>
+          <div class="hero-card__footer">
+            <strong>35%+</strong>
+            <span>Typical gross margin target</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust-bar" id="trust" aria-label="Social proof and trust bar">
+        <p>Trusted by independent retailers, ecommerce teams, gift shops, and wholesale buyers.</p>
+        <div>
+          <span>Fast Dispatch</span>
+          <span>Secure Payments</span>
+          <span>Bulk Pricing</span>
+          <span>Quality Checked</span>
+        </div>
+      </section>
+
+      <section class="promo-countdown section-shell" id="promotion" aria-labelledby="promotion-title">
+        <div class="promo-countdown__card">
+          <div class="promo-countdown__content">
+            <p class="eyebrow">New Customer Discount</p>
+            <h2 id="promotion-title">First order savings end soon.</h2>
+            <p>
+              New buyers can unlock a limited-time discount on starter bundles and wholesale
+              sample orders before the promotion window closes.
+            </p>
+          </div>
+        </div>
+        <div class="flip-countdown" data-countdown data-duration-hours="48" aria-live="polite">
+          <p>Promotion End Time</p>
+          <div class="flip-countdown__row" aria-label="Promotion countdown timer">
+            <div class="flip-countdown__group">
+              <span>Days</span>
+              <div class="flip-countdown__digits" data-unit="days">
+                <strong data-digit>0</strong>
+                <strong data-digit>0</strong>
+              </div>
+            </div>
+            <b aria-hidden="true">:</b>
+            <div class="flip-countdown__group">
+              <span>Hours</span>
+              <div class="flip-countdown__digits" data-unit="hours">
+                <strong data-digit>0</strong>
+                <strong data-digit>0</strong>
+              </div>
+            </div>
+            <b aria-hidden="true">:</b>
+            <div class="flip-countdown__group">
+              <span>Minutes</span>
+              <div class="flip-countdown__digits" data-unit="minutes">
+                <strong data-digit>0</strong>
+                <strong data-digit>0</strong>
+              </div>
+            </div>
+            <b aria-hidden="true">:</b>
+            <div class="flip-countdown__group">
+              <span>Seconds</span>
+              <div class="flip-countdown__digits" data-unit="seconds">
+                <strong data-digit>0</strong>
+                <strong data-digit>0</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="promo-countdown__action">
+          <a class="button button--primary" href="#contact">Claim the discount</a>
+        </div>
+      </section>
+
+      <section class="section-shell split-section" id="offer">
+        <div class="section-heading offer-heading">
+          <p class="eyebrow">What We Offer</p>
+          <h2>Everything you need to source, stock, and sell with confidence.</h2>
+        </div>
+        <div class="card-grid">
+          {offers.map((offer) => (
+            <article class="info-card">
+              <span>{offer.icon}</span>
+              <h3>{offer.title}</h3>
+              <p>{offer.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="section-shell product-section" id="products">
+        <div class="section-heading">
+          <p class="eyebrow">Best Sellers</p>
+          <h2>Product showcase built for quick decisions.</h2>
+          <p>Use this section to highlight your strongest categories, hero SKUs, or seasonal bundles.</p>
+        </div>
+        <div class="product-slider" data-product-slider tabindex="0" aria-roledescription="carousel" aria-label="Best selling products">
+          <div class="product-slider__viewport">
+            <div class="product-slider__track" data-product-track>
+              {products.map((product, index) => (
+                <article class="product-card product-slide" data-product-slide aria-label={`Product ${index + 1} of ${products.length}`}>
+                  <div class="product-card__visual">
+                    <span>{product.tag}</span>
+                  </div>
+                  <div class="product-card__body">
+                    <p>{product.price}</p>
+                    <h3>{product.name}</h3>
+                    <p>{product.description}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+          <div class="product-slider__controls">
+            <div class="product-slider__dots" data-product-dots aria-label="Choose a product"></div>
+            <div class="product-slider__arrows">
+              <button class="slider-arrow" type="button" data-product-prev aria-label="Previous product">←</button>
+              <button class="slider-arrow" type="button" data-product-next aria-label="Next product">→</button>
+            </div>
+          </div>
+        </div>
+        <noscript>
+          <div class="product-grid product-grid--fallback">
+            {products.map((product) => (
+              <article class="product-card">
+                <div class="product-card__visual">
+                  <span>{product.tag}</span>
+                </div>
+                <div class="product-card__body">
+                  <p>{product.price}</p>
+                  <h3>{product.name}</h3>
+                  <p>{product.description}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </noscript>
+      </section>
+
+      <section class="section-shell why-section" id="why-buy">
+        <div class="section-heading">
+          <p class="eyebrow">Why Customers Buy From Us</p>
+          <h2>Reliable products, clean margins, and less operational friction.</h2>
+        </div>
+        <div class="reason-panel">
+          {reasons.map((reason) => (
+            <div>
+              <span aria-hidden="true">✓</span>
+              <p>{reason}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="section-shell process-section" id="process">
+        <div class="section-heading">
+          <p class="eyebrow">How It Works</p>
+          <h2>From first inquiry to fulfilled order in three steps.</h2>
+        </div>
+        <div class="steps">
+          {steps.map(([number, title, description]) => (
+            <article>
+              <span>{number}</span>
+              <h3>{title}</h3>
+              <p>{description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="section-shell advantage-section" id="advantages">
+        <div class="advantage-card advantage-card--dark">
+          <p class="eyebrow">Wholesale Advantages</p>
+          <h2>Scale orders without losing control.</h2>
+          <ul>
+            <li>Volume pricing and custom quotes</li>
+            <li>Replenishment planning for repeat buyers</li>
+            <li>Packaging options for qualified orders</li>
+          </ul>
+        </div>
+        <div class="advantage-card">
+          <p class="eyebrow">Retail Advantages</p>
+          <h2>Start small and sell faster.</h2>
+          <ul>
+            <li>Low-friction starter bundles</li>
+            <li>Shelf-ready presentation</li>
+            <li>Easy product education and promotion</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section-shell shipping-section" id="shipping">
+        <div>
+          <p class="eyebrow">Packaging & Shipping</p>
+          <h2>Protected, tracked, and presentation-ready.</h2>
+          <p>
+            Orders are prepared with protective materials, clear labeling, and shipment tracking.
+            For retail programs, packaging can support gifting, display, and seasonal campaigns.
+          </p>
+        </div>
+        <div class="shipping-list">
+          <span>Protective carton packing</span>
+          <span>Tracking after dispatch</span>
+          <span>Retail-ready bundle options</span>
+          <span>Wholesale pallet planning</span>
+        </div>
+      </section>
+
+      <section class="section-shell review-section" id="reviews" aria-labelledby="reviews-title">
+        <div class="section-heading">
+          <p class="eyebrow">Customer Reviews</p>
+          <h2 id="reviews-title">Proof from buyers who reorder.</h2>
+        </div>
+        <div class="review-slider" data-review-slider tabindex="0" aria-roledescription="carousel" aria-label="Customer reviews">
+          <div class="review-slider__viewport">
+            <div class="review-slider__track" data-review-track>
+              {reviews.map((review, index) => (
+                <figure class="review-slide" data-review-slide aria-label={`Review ${index + 1} of ${reviews.length}`}>
+                  <div class="review-slide__topline">
+                    <div class="review-slide__rating" aria-label="5 out of 5 stars">★★★★★</div>
+                    <span class="review-slide__quote-mark" aria-hidden="true">”</span>
+                  </div>
+                  <div class="review-gallery" aria-label={`${review.author} product review photos`}>
+                    {review.productImages.map((photo, photoIndex) => (
+                      <button
+                        class="review-gallery__item"
+                        type="button"
+                        data-lightbox-src={photo.src}
+                        data-lightbox-alt={photo.alt}
+                        aria-label={`Open product review image ${photoIndex + 1} from ${review.author}`}
+                      >
+                        <img src={photo.src} alt={photo.alt} loading="lazy" />
+                      </button>
+                    ))}
+                  </div>
+                  <blockquote>“{review.quote}”</blockquote>
+                  <figcaption>
+                    <img src={review.image} alt={`${review.author}, ${review.role}`} loading="lazy" />
+                    <span class="review-slide__avatar-fallback" aria-hidden="true">{review.initials}</span>
+                    <span>
+                      <strong>{review.author}</strong>
+                      <small>{review.role}</small>
+                    </span>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+          <div class="review-slider__controls">
+            <div class="review-slider__dots" data-review-dots aria-label="Choose a review"></div>
+            <div class="review-slider__arrows">
+              <button class="slider-arrow" type="button" data-review-prev aria-label="Previous review">←</button>
+              <button class="slider-arrow" type="button" data-review-next aria-label="Next review">→</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="image-lightbox" data-lightbox hidden>
+        <button class="image-lightbox__close" type="button" data-lightbox-close aria-label="Close enlarged image">×</button>
+        <div class="image-lightbox__frame" role="dialog" aria-modal="true" aria-label="Enlarged product review image">
+          <img data-lightbox-image src="" alt="" />
+        </div>
+      </div>
+
+      <section class="section-shell faq-section" id="faq">
+        <div class="section-heading">
+          <p class="eyebrow">FAQ</p>
+          <h2>Answers before you place an order.</h2>
+        </div>
+        <div class="faq-list">
+          {faqs.map(([question, answer]) => (
+            <details>
+              <summary>{question}</summary>
+              <p>{answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <section class="contact-section section-shell" id="contact" aria-labelledby="contact-title">
+        <div class="section-heading">
+          <p class="eyebrow">Contact Us</p>
+          <h2 id="contact-title">Talk with us before you order.</h2>
+          <p>Reach out for wholesale pricing, sample bundles, packaging questions, or delivery timelines.</p>
+        </div>
+        <div class="contact-grid">
+          <a class="contact-card" href="mailto:sales@example.com?subject=Wholesale%20%2F%20Retail%20Quote%20Request">
+            <span aria-hidden="true">✉</span>
+            <div>
+              <strong>Email</strong>
+              <p>sales@example.com</p>
+            </div>
+          </a>
+          <a class="contact-card" href="https://wa.me/15551234567" target="_blank" rel="noreferrer">
+            <span aria-hidden="true">☏</span>
+            <div>
+              <strong>WhatsApp</strong>
+              <p>+1 (555) 123-4567</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="final-cta section-shell" id="final-cta">
+        <p class="eyebrow">Final CTA</p>
+        <h2>Ready to build your next winning product mix?</h2>
+        <p>
+          Tell us what you sell, your target quantity, and your delivery window. We’ll recommend the
+          best retail or wholesale path.
+        </p>
+        <a class="button button--primary" href="#contact">Request pricing</a>
+      </section>
+    </main>
+  </body>
+</html>
+
+<script>
+  const menuToggle = document.querySelector('[data-menu-toggle]');
+  const siteNavigation = document.querySelector('#site-navigation');
+
+  const closeMenu = () => {
+    if (!menuToggle || !siteNavigation) return;
+    menuToggle.setAttribute('aria-expanded', 'false');
+    siteNavigation.classList.remove('is-open');
+  };
+
+  menuToggle?.addEventListener('click', () => {
+    const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', String(!isOpen));
+    siteNavigation?.classList.toggle('is-open', !isOpen);
+  });
+
+  siteNavigation?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeMenu();
+  });
+
+  const lightbox = document.querySelector('[data-lightbox]');
+  const lightboxImage = lightbox?.querySelector('[data-lightbox-image]');
+  const lightboxClose = lightbox?.querySelector('[data-lightbox-close]');
+
+  const setupSlider = ({ rootSelector, trackSelector, slideSelector, dotsSelector, previousSelector, nextSelector, dotLabel, desktopVisible = 1 }) => {
+    const root = document.querySelector(rootSelector);
+    const trackElement = root?.querySelector(trackSelector);
+    const slideElements = root ? Array.from(root.querySelectorAll(slideSelector)) : [];
+    const dotsElement = root?.querySelector(dotsSelector);
+    const previousControl = root?.querySelector(previousSelector);
+    const nextControl = root?.querySelector(nextSelector);
+
+    if (!root || !trackElement || !dotsElement || slideElements.length === 0) return;
+
+    let currentIndex = 0;
+    let touchStartX = 0;
+
+    const getVisibleSlides = () => (window.matchMedia('(min-width: 900px)').matches ? desktopVisible : 1);
+    const getMaxIndex = () => Math.max(0, Math.ceil(slideElements.length / getVisibleSlides()) - 1);
+    const getTrackGap = () => {
+      const styles = window.getComputedStyle(trackElement);
+      return Number.parseFloat(styles.columnGap || styles.gap) || 0;
+    };
+    const getPageStride = () => {
+      const viewportWidth = trackElement.parentElement?.clientWidth ?? trackElement.clientWidth;
+      return viewportWidth + getTrackGap();
+    };
+
+    const goToSlide = (index) => {
+      const maxIndex = getMaxIndex();
+      currentIndex = index < 0 ? maxIndex : index > maxIndex ? 0 : index;
+      updateSlider();
+    };
+
+    const updateSlider = () => {
+      const visibleSlides = getVisibleSlides();
+      const maxIndex = getMaxIndex();
+      currentIndex = Math.min(currentIndex, maxIndex);
+      trackElement.style.transform = `translateX(-${currentIndex * getPageStride()}px)`;
+      slideElements.forEach((slide, index) => {
+        const firstVisibleIndex = currentIndex * visibleSlides;
+        const isActive = index >= firstVisibleIndex && index < firstVisibleIndex + visibleSlides;
+        slide.setAttribute('aria-hidden', String(!isActive));
+        if (isActive) {
+          slide.removeAttribute('inert');
+        } else {
+          slide.setAttribute('inert', '');
+        }
+      });
+      const dots = dotsElement.querySelectorAll('.slider-dot');
+      dots.forEach((dot, index) => {
+        const shouldShow = index <= maxIndex;
+        dot.classList.toggle('is-active', index === currentIndex);
+        dot.toggleAttribute('hidden', !shouldShow);
+        dot.setAttribute('aria-current', index === currentIndex ? 'true' : 'false');
+      });
+    };
+
+    slideElements.forEach((_, index) => {
+      const dot = document.createElement('button');
+      dot.className = 'slider-dot';
+      dot.type = 'button';
+      dot.setAttribute('aria-label', `${dotLabel} ${index + 1}`);
+      dot.addEventListener('click', () => goToSlide(index));
+      dotsElement.append(dot);
+    });
+
+    previousControl?.addEventListener('click', () => goToSlide(currentIndex - 1));
+    nextControl?.addEventListener('click', () => goToSlide(currentIndex + 1));
+
+    root.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') goToSlide(currentIndex - 1);
+      if (event.key === 'ArrowRight') goToSlide(currentIndex + 1);
+    });
+
+    root.addEventListener(
+      'touchstart',
+      (event) => {
+        touchStartX = event.changedTouches[0]?.screenX ?? 0;
+      },
+      { passive: true },
+    );
+
+    root.addEventListener(
+      'touchend',
+      (event) => {
+        const touchEndX = event.changedTouches[0]?.screenX ?? 0;
+        const distance = touchStartX - touchEndX;
+        if (Math.abs(distance) > 45) goToSlide(currentIndex + (distance > 0 ? 1 : -1));
+      },
+      { passive: true },
+    );
+
+    window.addEventListener('resize', updateSlider);
+
+    updateSlider();
+  };
+
+  setupSlider({
+    rootSelector: '[data-product-slider]',
+    trackSelector: '[data-product-track]',
+    slideSelector: '[data-product-slide]',
+    dotsSelector: '[data-product-dots]',
+    previousSelector: '[data-product-prev]',
+    nextSelector: '[data-product-next]',
+    dotLabel: 'Show product',
+    desktopVisible: 3,
+  });
+
+  setupSlider({
+    rootSelector: '[data-review-slider]',
+    trackSelector: '[data-review-track]',
+    slideSelector: '[data-review-slide]',
+    dotsSelector: '[data-review-dots]',
+    previousSelector: '[data-review-prev]',
+    nextSelector: '[data-review-next]',
+    dotLabel: 'Show review',
+  });
+
+  document.querySelectorAll('[data-countdown]').forEach((countdown) => {
+    const storageKey = 'astroLandingNewCustomerDiscountEndsAt';
+    const durationHours = Number(countdown.getAttribute('data-duration-hours')) || 48;
+    const durationMs = durationHours * 60 * 60 * 1000;
+    const savedEndTime = Number(window.localStorage.getItem(storageKey));
+    const endTime = savedEndTime > Date.now() ? savedEndTime : Date.now() + durationMs;
+
+    window.localStorage.setItem(storageKey, String(endTime));
+
+    const units = {
+      days: countdown.querySelectorAll('[data-unit="days"] [data-digit]'),
+      hours: countdown.querySelectorAll('[data-unit="hours"] [data-digit]'),
+      minutes: countdown.querySelectorAll('[data-unit="minutes"] [data-digit]'),
+      seconds: countdown.querySelectorAll('[data-unit="seconds"] [data-digit]'),
+    };
+
+    const initializeDigit = (digit, value) => {
+      digit.classList.add('flip-digit');
+      digit.innerHTML = `
+        <span class="flip-digit__half flip-digit__base flip-digit__base-top"><span>${value}</span></span>
+        <span class="flip-digit__half flip-digit__base flip-digit__base-bottom"><span>${value}</span></span>
+        <span class="flip-digit__half flip-digit__flap flip-digit__flap-top"><span>${value}</span></span>
+        <span class="flip-digit__half flip-digit__flap flip-digit__flap-bottom"><span>${value}</span></span>
+      `;
+      digit.dataset.value = value;
+      digit.dataset.initialized = 'true';
+    };
+
+    const setDigitPanels = (digit, currentValue, nextValue) => {
+      digit.querySelector('.flip-digit__base-top span').textContent = currentValue;
+      digit.querySelector('.flip-digit__base-bottom span').textContent = currentValue;
+      digit.querySelector('.flip-digit__flap-top span').textContent = currentValue;
+      digit.querySelector('.flip-digit__flap-bottom span').textContent = nextValue;
+    };
+
+    const setDigits = (unit, value) => {
+      const nextValue = String(value).padStart(2, '0').slice(-2);
+      units[unit].forEach((digit, index) => {
+        const nextDigit = nextValue[index];
+        if (digit.dataset.initialized !== 'true') {
+          initializeDigit(digit, nextDigit);
+          return;
+        }
+
+        const currentDigit = digit.dataset.value;
+        if (currentDigit === nextDigit || digit.classList.contains('is-flipping')) return;
+
+        setDigitPanels(digit, currentDigit, nextDigit);
+        digit.classList.remove('is-flipping');
+        requestAnimationFrame(() => digit.classList.add('is-flipping'));
+        window.setTimeout(() => {
+          setDigitPanels(digit, nextDigit, nextDigit);
+          digit.dataset.value = nextDigit;
+          digit.classList.remove('is-flipping');
+        }, 460);
+      });
+    };
+
+    const tick = () => {
+      const remaining = Math.max(0, endTime - Date.now());
+      const totalSeconds = Math.floor(remaining / 1000);
+      const days = Math.floor(totalSeconds / 86400);
+      const hours = Math.floor((totalSeconds % 86400) / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+
+      setDigits('days', days);
+      setDigits('hours', hours);
+      setDigits('minutes', minutes);
+      setDigits('seconds', seconds);
+    };
+
+    tick();
+    window.setInterval(tick, 1000);
+  });
+
+  if (lightbox && lightboxImage instanceof HTMLImageElement) {
+    const openLightbox = (src, alt) => {
+      lightboxImage.src = src;
+      lightboxImage.alt = alt;
+      lightbox.removeAttribute('hidden');
+      document.body.classList.add('is-lightbox-open');
+      lightboxClose?.focus();
+    };
+
+    const closeLightbox = () => {
+      lightbox.setAttribute('hidden', '');
+      lightboxImage.src = '';
+      document.body.classList.remove('is-lightbox-open');
+    };
+
+    document.querySelectorAll('[data-lightbox-src]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const src = button.getAttribute('data-lightbox-src');
+        const alt = button.getAttribute('data-lightbox-alt') ?? 'Product review image';
+        if (src) openLightbox(src, alt);
+      });
+    });
+
+    lightboxClose?.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !lightbox.hasAttribute('hidden')) closeLightbox();
+    });
+  }
+</script>
