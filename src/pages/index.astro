@@ -678,7 +678,7 @@ const faqs = [
     const durationHours = Number(countdown.getAttribute('data-duration-hours')) || 48;
     const durationMs = durationHours * 60 * 60 * 1000;
     const savedEndTime = Number(window.localStorage.getItem(storageKey));
-    const endTime = savedEndTime > Date.now() ? savedEndTime : Date.now() + durationMs;
+    let endTime = savedEndTime > Date.now() ? savedEndTime : Date.now() + durationMs;
 
     window.localStorage.setItem(storageKey, String(endTime));
 
@@ -732,6 +732,11 @@ const faqs = [
     };
 
     const tick = () => {
+      if (Date.now() >= endTime) {
+        endTime = Date.now() + durationMs;
+        window.localStorage.setItem(storageKey, String(endTime));
+      }
+
       const remaining = Math.max(0, endTime - Date.now());
       const totalSeconds = Math.floor(remaining / 1000);
       const days = Math.floor(totalSeconds / 86400);
@@ -746,7 +751,10 @@ const faqs = [
     };
 
     tick();
-    window.setInterval(tick, 1000);
+    const intervalId = window.setInterval(tick, 1000);
+    window.addEventListener('visibilitychange', tick);
+    window.addEventListener('pageshow', tick);
+    window.addEventListener('pagehide', () => window.clearInterval(intervalId), { once: true });
   });
 
   if (lightbox && lightboxImage instanceof HTMLImageElement) {
