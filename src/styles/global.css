@@ -280,6 +280,12 @@ h3 {
   gap: 1.35rem;
 }
 
+.hero__aside {
+  display: grid;
+  align-content: start;
+  gap: 1rem;
+}
+
 .hero__lead {
   max-width: 42rem;
   color: var(--muted);
@@ -743,6 +749,24 @@ h3 {
 .review-grid figure,
 .faq-list details {
   padding: clamp(1.45rem, 4vw, 2rem);
+}
+
+.steps article {
+  position: relative;
+}
+
+.steps article::after {
+  position: absolute;
+  z-index: 1;
+  color: var(--accent);
+  content: '↓';
+  font-size: 1.45rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.steps article:last-child::after {
+  display: none;
 }
 
 .info-card span,
@@ -1569,6 +1593,23 @@ details p {
   .steps {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .steps article:nth-child(odd)::after {
+    top: 50%;
+    right: -1.35rem;
+    transform: translateY(-50%);
+    content: '→';
+  }
+
+  .steps article:nth-child(even)::after {
+    bottom: -1.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .steps article:last-child::after {
+    display: none;
+  }
 }
 
 @media (min-width: 900px) {
@@ -1596,12 +1637,40 @@ details p {
     grid-template-columns: 1fr;
   }
 
+  .hero__aside {
+    align-self: start;
+    margin-top: clamp(3.5rem, 5vw, 4.5rem);
+  }
+
   .hero-card {
     padding: 1.6rem;
   }
 
   .steps {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .steps article:nth-child(odd)::after,
+  .steps article:nth-child(even)::after {
+    top: 50%;
+    right: -1.35rem;
+    bottom: auto;
+    left: auto;
+    transform: translateY(-50%);
+    content: '→';
+  }
+
+  .steps article:nth-child(3)::after,
+  .steps article:nth-child(6)::after {
+    top: auto;
+    right: 12%;
+    bottom: -1.75rem;
+    transform: none;
+    content: '↙';
+  }
+
+  .steps article:last-child::after {
+    display: none;
   }
 
   .card-grid {
