@@ -18,7 +18,7 @@ npm run preview
 
 ## Cloudflare Pages
 
-This project uses `@astrojs/cloudflare` with `output: 'server'`, so it can run on Cloudflare Pages with Workers support.
+This landing page uses Astro's static output, which is the simplest and most reliable setup for Cloudflare Pages. The build generates `dist/index.html` and does not require Workers or server-side rendering.
 
 ### Local Cloudflare preview
 
@@ -43,6 +43,8 @@ npm run cf:deploy
 ## GitHub + Cloudflare Pages automatic deployment
 
 The recommended deployment method is Cloudflare Pages Git integration. It automatically builds and deploys the project whenever changes are pushed to the production branch.
+
+Make sure Cloudflare Pages is configured to deploy the branch that contains the latest site changes. This repository currently has a `main` branch and a `site/bags` branch. If the bags landing page is the intended production site, set the Cloudflare production branch to `site/bags`, or merge `site/bags` into `main` before deploying.
 
 ### 1. Push the project to GitHub
 
