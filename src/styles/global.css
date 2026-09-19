@@ -1557,6 +1557,13 @@ details p {
   color: rgba(255, 255, 255, 0.72);
 }
 
+@media (max-width: 639px) {
+  .hero__content h1 {
+    margin-inline: auto;
+    text-align: center;
+  }
+}
+
 @media (min-width: 640px) {
   .site-header {
     grid-template-columns: auto 1fr;
