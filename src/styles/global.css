@@ -1559,6 +1559,8 @@ details p {
 
 @media (max-width: 639px) {
   .hero__content h1 {
+    width: 100%;
+    max-width: none;
     margin-inline: auto;
     text-align: center;
   }
